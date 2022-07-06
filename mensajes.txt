@@ -1,0 +1,20 @@
+[
+  {
+    "email": "pedro@gmail.com",
+    "date": "06/07/2022 17:07:53",
+    "msg": "Hola!",
+    "id": 0
+  },
+  {
+    "email": "lucia@hotmail.com",
+    "date": "06/07/2022 17:07:32",
+    "msg": "que tal",
+    "id": 1
+  },
+  {
+    "email": "diego@outlook.com",
+    "date": "06/07/2022 17:07:53",
+    "msg": "Como están todos?",
+    "id": 2
+  }
+]

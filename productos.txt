@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Escuadra",
+    "price": 123.45,
+    "thumbnail": "https://http2.mlstatic.com/escuadra-carpintero-speed-square-stanley-D_NQ_NP_676175-MLM31223989698_062019-F.jpg",
+    "id": 1
+  },
+  {
+    "title": "Calculadora",
+    "price": 234.56,
+    "thumbnail": "https://euquerosabertudo.com/wp-content/uploads/2018/09/quem-inventou-a-calculadora-143-img.jpg",
+    "id": 2
+  },
+  {
+    "title": "Globo Terraqueo",
+    "price": 345.67,
+    "thumbnail": "https://http2.mlstatic.com/globo-terraqueo-escolar-32-cm-de-diametro-D_NQ_NP_865325-MLM31104005950_062019-F.jpg",
+    "id": 3
+  },
+  {
+    "title": "Tanque",
+    "price": "4000",
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/military-and-army-2/64/Army_1-16-256.png",
+    "id": 5
+  },
+  {
+    "title": "Chaleco",
+    "price": "290",
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/military-and-army-2/64/Army_1-08-256.png",
+    "id": 6
+  }
+]

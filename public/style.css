@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap");
+/*Fondo: #E9C46A, texto: #264653*/
+body {
+  font-family: "Merriweather", serif;
+  background-color: #E9C46A;
+}
+
+.navbar {
+  color: #264653;
+}
+
+.nav-link {
+  color: #264653;
+}
+
+.form-container {
+  background-color: #e9edc9;
+  color: #264653;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.form-btn {
+  background-color: #e9edc9;
+  color: #2a9d8f;
+  border: 2px #2a9d8f solid;
+  font-weight: bold;
+}
+
+.form-btn:hover {
+  background-color: #2a9d8f;
+  color: #e9edc9;
+}
+
+.table-container {
+  background-color: #e9edc9;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.table {
+  color: #264653;
+  text-align: center;
+}
+
+.thumbnail {
+  width: 50px;
+  height: auto;
+}
+
+.msg-email {
+  font-weight: bold;
+  color: #264653;
+}
+
+.msg-date {
+  color: chocolate;
+}
+
+.msg-content {
+  color: forestgreen;
+  font-style: italic;
+}

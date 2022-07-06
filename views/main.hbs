@@ -1,0 +1,45 @@
+  {{> navbar}}
+  <div class="container-fluid">
+    <div class="row mt-4 justify-content-center">
+      <div class="col-6 form-container">
+        <h2 class="text-center mb-4">Productos</h2>
+        <form onsubmit="return addItems(this)">
+          <div class="mb-3">
+            <label for="title" class="form-label">Titulo del producto</label>
+            <input id="title" type="text" class="form-control" name="title" placeholder="Calculadora, etc" required>
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Precio</label>
+            <input id="price" type="text" placeholder="10.00" class="form-control" name="price" required>
+          </div>
+          <div class="mb-3">
+            <label for="thumbnail" class="form-label">Thumbnail</label>
+            <input id="thumbnail" type="text" placeholder="http://example.com" class="form-control" name="thumbnail">
+          </div>
+          <input class="btn mx-auto d-block form-btn" type="submit" value="Agregar"/>
+        </form>
+        <div id="table">
+
+        </div>
+      </div>
+    </div>
+    <div class="row mt-2 justify-content-center">
+      <div class="col-6 form-container">
+        <h4 class="ml-2">Mensajes</h4>
+        <form onsubmit="return addMsg(this)">
+          <div class="mb-1">
+            <label for="email" class="form-label">Correo:</label>
+            <input type="mail" id="email" class="form-control" name="email" placeholder="example@example.com" required>
+          </div>
+          <div class="mb-1">
+            <label for="msg" class="form-label">Mensaje:</label>
+            <input type="text" id="msg" class="form-control" name="msg" placeholder="Hello world!">
+          </div>
+          <div class="mb-1">
+            <input class="btn form-btn" type="submit" value="Enviar">
+          </div>
+        </form>
+        <div id="msg-center"></div>
+      </div>
+    </div>
+  </div>
