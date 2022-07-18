@@ -1,12 +1,20 @@
 const socket = io();
 
 // Renderiza los items recibidos con handlebars
-socket.on('items', items => {
+socket.on('items', (items) => {
   render('table.hbs', {items}, 'table');
 });
 
 socket.on('msgs', msgs => {
-  render('mensajes.hbs', {msgs}, 'msg-center');
+  // Se le da formato a la fecha
+  const dateFormat = msgs.map(msg => {
+    return {
+      ...msg,
+      date: moment(msg.date).format('DD/MM/YYYY HH:MM:SS')
+    }
+  });
+  console.log(dateFormat);
+  render('mensajes.hbs', {msgs: dateFormat}, 'msg-center');
 });
 
 // Renderiza el template con la informacion y lo pone dentro del elemento con el id
@@ -42,7 +50,6 @@ function addMsg(e) {
   }
   const newMsg = {
     email,
-    date: moment().format('DD/MM/YYYY HH:MM:SS'),
     msg: document.getElementById('msg').value
   }
 

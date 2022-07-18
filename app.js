@@ -7,16 +7,15 @@ const httpServer = new HttpServer(app);
 const io = new IOServer(httpServer);
 
 // Rutas
-const productApi = require('./routes/productos');
+const productApi = require('./routes/api/productos');
 const webRouter = require('./routes/index');
 
 // Motor de Plantillas
 const hbs = require('express-handlebars');
 
-// Contenedor
-const Contenedor = require('./Contenedor');
-const productos = new Contenedor('productos');
-const mensajes = new Contenedor('mensajes');
+// Importando los Models
+const Productos = require('./model/Productos');
+const Mensajes = require('./model/Mensajes');
 
 const PORT = 3000;
 
@@ -45,29 +44,33 @@ app.use('/', webRouter);
 app.set('view engine', 'hbs');
 app.set('views', './views');
 
-const items = productos.getAllSync();
-const msgs = mensajes.getAllSync();
-
 // Conexiones websocket
 io.on('connection', socket => {
     console.log('Usuario Conectado');
-    // Envia los items al frontend
-    socket.emit('items', items);
 
-    // Envia los mensajes del servidor
-    socket.emit('msgs', msgs);
+    // Obtiene los productos y los envia
+    Productos.getAll().then((items) => {
+        // Envia los items al frontend
+        socket.emit('items', items);
+    });
+
+    Mensajes.getAll().then((msgs) => {
+        // Envia los mensajes del servidor
+        socket.emit('msgs', msgs);
+    });
+
 
     // Recibe un nuevo item y lo guarda
-    socket.on('new-item', data => {
-        items.push(data);
-        productos.save(data);
+    socket.on('new-item', async data => {
+        await Productos.save(data);
+        const items = await Productos.getAll();
         io.sockets.emit('items', items);
     });
 
     // Recibe un nuevo mesaje y lo guarda
-    socket.on('new-msg', data => {
-        msgs.push(data);
-        mensajes.save(data);
+    socket.on('new-msg', async data => {
+        await Mensajes.save(data);
+        const msgs = await Mensajes.getAll();
         io.sockets.emit('msgs', msgs);
     });
 })
